@@ -34,7 +34,7 @@ class WatermarkDetector:
         self.watermarklist = []
         self.ipdtime = np.zeros()
 
-        self.offset = 0
+        self.offset = 0.2T
         self.row = 0
         self.line = 0
         self.index_pintervals = 0
