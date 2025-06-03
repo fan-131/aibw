@@ -17,7 +17,7 @@ class WatermarkEmbedder:
         self.r = redundancy
         self.n = self.l * self.r
         self.T = window_size
-        self.offset = 0.0
+        self.offset = 0.2T
         self.queue = Queue(maxsize=queue_length)
         self.max_queue_length = queue_length
 
@@ -32,8 +32,8 @@ class WatermarkEmbedder:
         self.reset()
 
     def get_delay(count):
-        base_delay = 0.03  # 每次增加的延迟
-        delay = base_delay * (count - 3)  # 从第3次开始延迟
+        base_delay = 0.03  
+        delay = base_delay * (count - 3)  
         if delay < 0:
             delay = 0
         return min(delay, 0.1)
